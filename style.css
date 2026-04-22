@@ -1,0 +1,35 @@
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #F5F9FC;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #212529;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* SIDEBAR TERTUTUP */
+.sidebar.collapsed {
+    transform: translateX(-250px);
+}
+
+/* CONTENT */
+.content {
+    margin-left: 250px;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+}
+
+/* CONTENT SAAT SIDEBAR TERTUTUP */
+.content.expanded {
+    margin-left: 0;
+}
+
