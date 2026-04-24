@@ -68,6 +68,7 @@
         SELECT id_transaksi, total_transaksi, status_transaksi, tanggal_transaksi
         FROM tb_transaksies
         WHERE user_id='{$_SESSION['user_id']}'
+        AND DATE(tanggal_transaksi)='$today'
         ORDER BY tanggal_transaksi DESC
         LIMIT 4
     ");

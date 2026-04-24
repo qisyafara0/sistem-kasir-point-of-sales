@@ -49,7 +49,8 @@
 
     // QUERY SELECT DATA DETAIL TRANSAKSI YANG SESUAI ID TRANSAKSI 
     $query_detail = "SELECT tb_detail_transaksies.id_detail_transaksi, 
-        q           tb_detail_transaksies.produk_id, tb_detail_transaksies.quantity, tb_detail_transaksies.subtotal, 
+                            tb_detail_transaksies.produk_id, 
+                            tb_detail_transaksies.quantity, tb_detail_transaksies.subtotal, 
                     tb_produks.nama_produk, 
                     tb_produks.harga_produk
                         FROM tb_detail_transaksies
