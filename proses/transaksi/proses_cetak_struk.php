@@ -13,7 +13,7 @@
 
     // QUERY HEADER STRUK
     $query_header_struk = "
-        SELECT tb_transaksies.*, tb_users.username 
+        SELECT tb_transaksies.*, tb_users.nama_user 
         FROM tb_transaksies
         JOIN tb_users ON tb_transaksies.user_id = tb_users.id_user
         WHERE tb_transaksies.id_transaksi = '$id_transaksi'
@@ -65,6 +65,7 @@
         .center {
             text-align: center;
             font-weight: bold;
+            font-size: large;
         }
 
         .line {
@@ -93,9 +94,10 @@
 
         <div class="center">
             STRUK PEMBAYARAN<br>
-            -------------------------
+            
         </div>
-        Kasir   : <?= $data_header_struk['username'] ?? '-' ?><br>
+        <div class="line"></div>
+        Kasir   : <?= $data_header_struk['nama_user'] ?? '-' ?><br>
         Tanggal : <?= $data_header_struk['tanggal_transaksi'] ?? '-' ?><br>
         <div class="line"></div>
         <?php while ($data = mysqli_fetch_assoc($result_struk)) { ?>
@@ -124,7 +126,7 @@
             <span><?= number_format($data_header_struk['kembali'] ?? 0, 0, ',', '.'); ?></span>
         </div>
         <div class="center" style="margin-top:10px;">
-            Terima Kasih
+            Terima Kasih 
         </div>
     </div>
 

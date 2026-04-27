@@ -51,6 +51,7 @@
         FROM tb_transaksies 
         WHERE user_id='{$_SESSION['user_id']}' 
         AND status_transaksi='open'
+         AND DATE(tanggal_transaksi)='$today'
     "))['total'];
 
     // VARIABEL BERISI QUERY MENGHITUNG TOTAL TRNASAKSI PAID HARI INI
